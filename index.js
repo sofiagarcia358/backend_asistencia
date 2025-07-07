@@ -7,8 +7,9 @@ const codigos = {}; // Almacena los códigos enviados por correo
 
 // Middleware
 app.use(cors({
-  origin: ['http://127.0.0.1:5501', 'hhttps://asistencia-examen.onrender.com/']  // pon aquí el URL real de tu frontend en Render
+  origin: ['http://127.0.0.1:5501', 'https://asistencia-examen.onrender.com']  // sin la "h" extra ni la barra al final
 }));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
