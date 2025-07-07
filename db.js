@@ -2,14 +2,17 @@
 const mysql = require('mysql2/promise');
 
 const db = mysql.createPool({
-  host: 'bybunlq3uuiwfuk4i5pw-mysql.services.clever-cloud.com',
-  user: 'u1ibuucb8bzaldvd',
-  password: 'QlnC8xwlnFRipyceIIiv',
-  database: 'bybunlq3uuiwfuk4i5pw',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   waitForConnections: true,
-  connectionLimit: 5,  // igual al límite de tu plan
+  connectionLimit: 5,
   queueLimit: 0
 });
+
+module.exports = db;
+
 
 // ¡ELIMINA O COMENTA ESTA PRUEBA MANUAL!
 // db.getConnection()
@@ -21,6 +24,5 @@ const db = mysql.createPool({
 //     console.error('Error de conexión a la base de datos:', err);
 //   });
 
-module.exports = db;
 
 
